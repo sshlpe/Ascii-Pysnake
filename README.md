@@ -1,6 +1,7 @@
 # Ascii-Pysnake
 Snake Game made with AsciiMatics, base and tasted only with Python 3.7
 ![](https://github.com/sebalepe/Ascii-Pysnake/tree/main/files/assets/bot_game.gif.gif)
+![This is an image](https://myoctocat.com/assets/images/base-octocat.svg)
 
 # Install
 clone the repository and install dependencies.
