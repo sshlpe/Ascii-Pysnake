@@ -3,14 +3,14 @@ Snake Game made with AsciiMatics, base and tasted only with Python 3.7
 
 ![my gif](https://github.com/sebalepe/Ascii-Pysnake/blob/main/files/assets/bot_game.gif)
 
-# Install
+## Install
 clone the repository and install dependencies.
 ```
 git clone https://github.com/sebalepe/Ascii-Pysnake.git
 cd Ascii-Pysnake
 pip3 install -r requirements.txt
 ```
-# Play
+## Play
 To play just run on terminal
 ```
 python3 snake.py
