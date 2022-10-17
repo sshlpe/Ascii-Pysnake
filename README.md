@@ -17,3 +17,4 @@ python3 snake.py
 - The game is terminal-base and set to the terminal size when started. 
 - The Snake moves with 'w', 's', 'a', 'd' keys for 'up', 'down', 'left', 'right. 
 - Pressing 'b' on anypoint starts the bot Best-First-Search mode, pressing the moving keys again gives back the control.
+- Pressing 'q' on any point quits the game.
