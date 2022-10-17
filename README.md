@@ -6,7 +6,7 @@ Snake Game made with AsciiMatics, base and tasted only with Python 3.7
 ## Install
 clone the repository and install dependencies.
 ```
-git clone https://github.com/sebalepe/Ascii-Pysnake.git
+git clone https://github.com/sshlpe/Ascii-Pysnake.git
 cd Ascii-Pysnake
 pip3 install -r requirements.txt
 ```
