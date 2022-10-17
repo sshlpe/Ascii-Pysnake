@@ -25,7 +25,7 @@ def draw_menu(screen):
 
 def draw_endgame(screen):
     h, w = screen.dimensions
-    screen.c('U ded', int(h/2))
+    screen.centre('U ded', int(h/2))
     screen.centre('Press Space to play Again', int(h/2)+2)
 
 def draw_wingame(screen):
