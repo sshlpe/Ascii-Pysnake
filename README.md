@@ -1,5 +1,6 @@
 # Ascii-Pysnake
 Snake Game made with AsciiMatics, base and tasted only with Python 3.7
+
 ![my gif](https://github.com/sebalepe/Ascii-Pysnake/blob/main/files/assets/bot_game.gif)
 
 # Install
