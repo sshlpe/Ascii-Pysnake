@@ -14,24 +14,24 @@ def draw_game(screen):
             if board.board[line][col] in 'sS':
                 screen.print_at(board.board[line][col], col, line, 2)
             elif board.board[line][col] in 'm':
-                screen.print_at(board.board[line][col], col, line, 1)
+                screen.print_at('a', col, line, 1)
             else:
                 screen.print_at(board.board[line][col], col, line)
 
 def draw_menu(screen):
     h, w = screen.dimensions
-    screen.print_at('Welcome  to Sssssnake', int(w/2)-10, int(h/2))
-    screen.print_at('Press Space to play', int(w/2)-10, int(h/2)+2)
+    screen.centre('Welcome  to Sssssnake', int(h/2))
+    screen.centre('Press Space to play', int(h/2)+2)
 
 def draw_endgame(screen):
     h, w = screen.dimensions
-    screen.print_at('U ded',  int(w/2)-10, int(h/2))
-    screen.print_at('Press Space to play Again', int(w/2)-10, int(h/2)+2)
+    screen.c('U ded', int(h/2))
+    screen.centre('Press Space to play Again', int(h/2)+2)
 
 def draw_wingame(screen):
     h, w = screen.dimensions
-    screen.print_at('U win',  int(w/2)-10, int(h/2))
-    screen.print_at('Press Space to play Again', int(w/2)-10, int(h/2)+2)
+    screen.centre('U win', int(h/2))
+    screen.centre('Press Space to play Again', int(h/2)+2)
 
 def run_game(screen):
     global g_state, board, snake, velx, vely
@@ -73,7 +73,6 @@ def update(screen):
     if ev == ord('b') and g_state in [1, 4, 5]:
         g_state = 2
         bot = True
-        #circuit = prim_maze_generator(board.sizeY, board.sizeX)
 
     if ev  == ord('q'):
         return sys.exit()
@@ -97,13 +96,13 @@ def demo(screen):
         draw(screen)
         update(screen)
         h, w = screen.dimensions
-        screen.print_at(f'Score: {snake.score()}', int(w/2)-10, h-5)
-        screen.print_at(f'Max Score: {max_score()}', int(w/2)-13, h-3)
+        screen.centre(f'Score: {snake.score()}', h-5)
+        screen.centre(f'Max Score: {max_score()}', h-3)
         if bot:
             player = 'Bot'
         else:
             player = 'User'
-        screen.print_at(f'Playing: {player}', int(w/2)+1, h-5)
+        screen.centre(f'Playing: {player}', h-5)
         screen.refresh()
         time.sleep(0.1)
 
