@@ -96,13 +96,13 @@ def demo(screen):
         draw(screen)
         update(screen)
         h, w = screen.dimensions
-        screen.centre(f'Score: {snake.score()}', h-5)
-        screen.centre(f'Max Score: {max_score()}', h-3)
+        screen.centre(f'Score: {snake.score()}', h-6)
+        screen.centre(f'Max Score: {max_score()}', h-5)
         if bot:
             player = 'Bot'
         else:
             player = 'User'
-        screen.centre(f'Playing: {player}', h-5)
+        screen.centre(f'Playing: {player}', h-2)
         screen.refresh()
         time.sleep(0.1)
 
