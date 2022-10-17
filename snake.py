@@ -59,16 +59,18 @@ def draw(screen):
         draw_game(screen)
     if g_state == 4:
         draw_endgame(screen)
+    if g_state == 5:
+        draw_wingame(screen)
 
 def update(screen):
     global velx, vely, g_state, bot, circuit
     ev = screen.get_key()
     run_game(screen)
 
-    if ev == ord(' ') and g_state in [1,4]:
+    if ev == ord(' ') and g_state in [1, 4, 5]:
         g_state = 2
 
-    if ev == ord('b') and g_state in [1,4]:
+    if ev == ord('b') and g_state in [1, 4, 5]:
         g_state = 2
         bot = True
         #circuit = prim_maze_generator(board.sizeY, board.sizeX)
@@ -87,8 +89,6 @@ def update(screen):
     if bot:
         vely, velx = botAI(board, snake, velx, vely)
     return 
-
-
 
 def demo(screen):
     while True:
