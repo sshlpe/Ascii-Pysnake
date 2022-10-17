@@ -10,7 +10,7 @@ git clone https://github.com/sebalepe/Ascii-Pysnake.git
 cd Ascii-Pysnake
 pip3 install -r requirements.txt
 ```
-# PLay
+# Play
 To play just run on terminal
 ```
 python3 snake.py
