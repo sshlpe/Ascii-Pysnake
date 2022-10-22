@@ -64,6 +64,7 @@ def draw(screen):
 
 def update(screen):
     global velx, vely, g_state, bot, circuit
+
     ev = screen.get_key()
     run_game(screen)
 
@@ -114,7 +115,7 @@ vely = 0
 bot = False
 circuit = None
 
-moves = {ord('d'): [1, 0], ord('a'): [-1, 0], ord('w'): [0,-1], ord('s'):[0,+1]}
+moves = {ord('d'): [1, 0], ord('a'): [-1, 0], ord('w'): [0,-1], ord('s'): [0,+1]}
 
 Screen.wrapper(demo)
 

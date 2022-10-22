@@ -27,28 +27,30 @@ class Board:
 		self.spawn_apple()
 		self.set_board()
 
+
 	def set_snake(self, snake):
 		self.set_board()
-		for i in range(len(snake.pos)):
+
+		for i in range(len(snake.pos)-1):
 			elm = snake.pos[i]
-			if not self.check_colition(elm):
-				return False
+			self.board[elm[0]][elm[1]] = 's'
 
-			if self.board[elm[0]][elm[1]] in 'm':
-				snake.grow()
-				self.reload()
-
-			if i == len(snake.pos) - 1:
-				self.board[elm[0]][elm[1]] = 'S'
-			else:
-				self.board[elm[0]][elm[1]] = 's'
+		elm = snake.pos[-1]
+		collision = self.check_colition(elm, snake)
+		if not collision:
+			return False
+		if self.board[elm[0]][elm[1]] in 'm':
+			snake.grow()
+			self.reload()
+			return self.set_snake(snake)
+		self.board[elm[0]][elm[1]] = 'S'
 		return True
 
-	def check_colition(self, pos):
+	def check_colition(self, pos, snake):
 		if (0 > pos[1] or 0 > pos[0]) or (self.sizeX <= pos[1] or self.sizeY <= pos[0]):
 			return False
 
-		if self.board[pos[0]][pos[1]] in 'sS':
+		if self.board[pos[0]][pos[1]] in 's' and snake.score() > 1:
 			return False
 
 		return True
