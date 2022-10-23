@@ -18,8 +18,9 @@ def f_value(board, pos, snake):
 	if not board.check_colition(pos, snake):
 		return math.inf
 
-	if not enclose_check(board, pos, snake):
-		return 1e10#math.inf
+	enclose, neighbours = enclose_check(board, pos, snake)
+	if not enclose:
+		return 1e10 - neighbours #math.inf
 
 	return ((apple[0] - pos[0]) ** 2 + (apple[1] - pos[1]) ** 2) ** 1 / 2
 
@@ -44,14 +45,14 @@ def enclose_check(board, pos, snake):
 			if elm not in check + neighbours:
 				check.append(elm)
 				if len(neighbours) > snake.score():
-					#print(neighbours)
-					return True
+					return True, None
 	total = 0
 	for line in board.board:
 		for col in line:
 			if col not in 's':
 				total += 1
-	return len(neighbours)/total >= 0.8
+
+	return len(neighbours)/total >= 0.8, len(neighbours)
 
 def get_neighbours(board, pos, snake):
 	moves = get_moves(0,0)
