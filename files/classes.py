@@ -50,7 +50,7 @@ class Board:
 		if (0 > pos[1] or 0 > pos[0]) or (self.sizeX <= pos[1] or self.sizeY <= pos[0]):
 			return False
 
-		if self.board[pos[0]][pos[1]] in 's' and snake.score() > 1:
+		if self.board[pos[0]][pos[1]] in 'sS' and snake.score() > 1:
 			return False
 
 		return True
