@@ -7,14 +7,17 @@ from files.classes import Board, Snake
 from files.save import check_point, max_score
 from files.bot import botAI
 
-
 def draw_game(screen):
     for line in range(board.sizeY):
         for col in range(board.sizeX):
-            if board.board[line][col] in 'sS':
-                screen.print_at(board.board[line][col], col, line, 2)
+            #if board.board[line][col] in 'sS':
+            #    screen.print_at(board.board[line][col], col, line, 2)
+            if board.board[line][col] in 'S':
+                screen.print_at('█', col, line, 2)
+            elif board.board[line][col] in 's':
+                screen.print_at('▒', col, line, 2)
             elif board.board[line][col] in 'm':
-                screen.print_at('a', col, line, 1)
+                screen.print_at('▓', col, line, 1)
             else:
                 screen.print_at(board.board[line][col], col, line)
 
